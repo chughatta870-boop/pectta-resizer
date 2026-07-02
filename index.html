@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PECTA 600x800 Resizer</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1565C0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <h2>PECTA Photo Resizer <span>600x800 | 10KB-25KB</span></h2>
+
+    <input type="file" id="fileInput" accept="image/*">
+
+    <div class="preview">
+      <canvas id="canvas" width="600" height="800"></canvas>
+    </div>
+
+    <div class="controls">
+      <label>Target Size: <span id="sizeLabel">20 KB</span></label>
+      <input type="range" id="sizeSlider" min="10" max="25" value="20">
+    </div>
+
+    <div class="btns">
+      <button id="downloadBtn">⬇️ Download</button>
+      <button id="shareBtn">📤 Share</button>
+      <button id="saveBtn">💾 Save</button>
+    </div>
+    <p id="status"></p>
+  </div>
+<script src="script.js"></script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+</body>
+</html>
